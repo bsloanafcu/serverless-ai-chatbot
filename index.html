@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser AI with WebGPU</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 2rem auto; }
+        textarea { width: 100%; box-sizing: border-box; }
+        #status { font-style: italic; color: #555; margin-bottom: 1rem; }
+        #output { white-space: pre-wrap; background: #f4f4f4; padding: 1rem; }
+    </style>
+</head>
+<body>
+    <h1>My 100% Private, In-Browser Chatbot</h1>
+    <p>
+        Your AI server bill is now $0. All inference runs on your local machine
+        using WebGPU and transformers.js.
+    </p>
+    <textarea id="prompt-input" rows="4" cols="50" placeholder="Type your prompt here..."></textarea>
+    <button id="generate-btn" disabled>Generate</button>
+    
+    <h3>Output:</h3>
+    <div id="status">Loading model... this can take a minute on first load.</div>
+    <div id="output"></div>
+    <script type="importmap">
+    {
+        "imports": {
+            "@xenova/transformers": "https://cdn.jsdelivr.net/npm/@xenova/transformers@2/dist/transformers.min.js"
+        }
+    }
+    </script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
